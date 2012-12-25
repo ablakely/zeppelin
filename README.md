@@ -27,3 +27,7 @@ Then run the bash install script, it will guide you through the rest of the inst
 ```bash
 ./scripts/deploy.sh
 ```
+
+## License
+
+All of zeppelin's code is licensed under GPLv3.0.  See the LICENSE file for more information.
