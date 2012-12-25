@@ -75,12 +75,15 @@
 	</head>
 	<body>
 		<div class="container">
-			<form class="form-signin">
+			<form class="form-signin" method="post">
+			<% if (err) {%>
+			<div class="alert alert-danger"><%= err %></div>
+			<% } %>
 				<div class="form-signin-heading">
 					<center><img width="200px" src="/imgs/logo.jpg" alt="zeppelin" title="zeppelin"></center>
 				</div>
-				<input type="text" class="input-block-level" placeholder="Username" />
-				<input type="password" class="input-block-level" placeholder="Password" />
+				<input type="text" class="input-block-level" placeholder="Username" name="username"/>
+				<input type="password" class="input-block-level" placeholder="Password" name="password" />
 				<button class="btn btn-purple btnlogin purple" type="submit">Login</button>
 			</form>
 

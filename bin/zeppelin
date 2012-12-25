@@ -10,9 +10,10 @@
 var zeppelinServer = require('../index.js');
 
 var zeppelin = new zeppelinServer({
+	// these are default configuration vars.  You can change them from the web ui
 	httpauth: {
 		username: "admin",
-		secret:   "password"
+		password: "secret"
 	}
 });
 
