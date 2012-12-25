@@ -6,6 +6,7 @@
  */
 
 var fs        = require('fs');
+var arDrone   = require('ar-drone');
 var WebServer = require('./lib/webserver.js');
 
 function Zeppelin(config) {
@@ -24,13 +25,14 @@ function Zeppelin(config) {
 			instance.config = config;
 		}
 	});
+
 	this.cwd = __dirname;
+	this.drone;
 }
 
 Zeppelin.prototype = {
 	init: function(cb) {
-		var instance = this;
-
+		this.drone = arDrone.createClient();
 		this.expressapp = new WebServer(this);
 		this.expressapp.init(cb);
 	}
