@@ -14,6 +14,7 @@
 	},
 	"dependencies": {
 		"express": "3.0.4",
+		"ejs": "*",
 		"ar-drone": "*"
 	},
 	"engines": {
