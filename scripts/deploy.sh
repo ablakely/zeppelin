@@ -5,6 +5,7 @@
 
 ZEPPELIN_DIR="$PWD/.."
 DRONE_FTP_ROOT="/data/video"
+INSTALLED=0
 
 echo "Zeppelin Deployment Automator"
 echo
@@ -23,6 +24,7 @@ if [[ $depmethod == "1" ]]; then
 	read -p "Enter the IP of the drone [192.168.1.1]: " droneip
 	echo "Copying files to drone via FTP..."
 	ftp -u "ftp://anonymous:anonymous@${droneip}/zeppelin $ZEPPELIN_DIR/../zeppelin"
+	INSTALLED=1
 	echo "Done."
 	echo
 fi
@@ -45,19 +47,26 @@ if [[ $depmethod == "2" ]]; then
 		echo "Copying files to [$usbmount]..."
 		mkdir $usbmount/zeppelin
 		cp -ap $ZEPPELIN_DIR/../zeppelin $usbmount/
+		INSTALLED=1
 		echo "Done."
+		echo
 	fi
 fi
 
 # Telnet
 #
 
-if [[ -n $droneip ]] && [[ $depmethod == "2" ]]; then
+if [[ $depmethod == "2" ]]; then
 	echo "Please ensure that you are connected to your drone's wifi network."
 	echo
 	read -p "Enter the IP of the drone [192.168.1.1]: " droneip
-else
-	read -p "Press ENTER to continue to install via telnet." t
+	if [[ $droneip == "" ]]; then
+		droneip="192.168.1.1"
+	fi
+fi
+
+if [[ $INSTALLED == "1" ]]; then
+	read -p "Press ENTER to continue to install via telnet to $droneip." t
 	echo "Installing Zeppelin on drone..."
 	{ echo "cd ${DRONE_FTP_ROOT}/ && mv zeppelin / && rm -rf zeppelin && echo '/zeppelin/bin/zeppelin' >> /etc/init.d/rcS && ext"; sleep 1; } | telnet $droneip
 	echo "Done."
