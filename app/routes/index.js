@@ -1,11 +1,16 @@
 module.exports = function(app, zeppelin) {
 	app.get('/', function(req, res) {
-		res.render('index');
+		if (req.signedCookies['auth'] !== undefined) {
+			res.redirect('/home');
+		} else {
+			res.render('index', {err: null});
+		}
 	});
 
 	app.post('/', function(req, res) {
 		if (req.body.username === zeppelin.config.httpauth.username && req.body.password === zeppelin.config.httpauth.password) {
-			res.render('home');
+			res.cookie('auth', 'zeppelin-auth-key', {signed: 'true'});
+			res.redirect('/home');
 		} else {
 			res.render('index', {err: "Error: Invalid username or password!"});
 		}

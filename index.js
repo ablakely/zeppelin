@@ -27,14 +27,27 @@ function Zeppelin(config) {
 	});
 
 	this.cwd = __dirname;
+	this.runningOnDrone = false;
 	this.drone;
+	this.navdata;
 }
 
 Zeppelin.prototype = {
 	init: function(cb) {
+		var instance = this;
+
+		this.runningOnDrone = fs.existsSync('/bin/parrotauthdaemon');
 		this.drone = arDrone.createClient();
+		this.drone.on('navdata', function(data) {
+			instance.navdata = data;
+		})
+
 		this.expressapp = new WebServer(this);
 		this.expressapp.init(cb);
+	},
+	writeConfig: function(cb) {
+		var instance = this;
+		fs.writeFile(__dirname+'/zeppelin_config.json', JSON.stringify(instance.config), cb);
 	}
 };
 

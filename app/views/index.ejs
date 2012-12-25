@@ -76,7 +76,7 @@
 	<body>
 		<div class="container">
 			<form class="form-signin" method="post">
-			<% if (err) {%>
+			<% if (err !== null) {%>
 			<div class="alert alert-danger"><%= err %></div>
 			<% } %>
 				<div class="form-signin-heading">

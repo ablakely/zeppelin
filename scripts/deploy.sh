@@ -4,7 +4,7 @@
 # Written by Aaron Blakely <aaron@ephasic.org>
 
 ZEPPELIN_DIR="$PWD/.."
-DRONE_FTP_ROOT="/data/video"
+DRONE_FTP_ROOT="/"
 INSTALLED=0
 
 echo "Zeppelin Deployment Automator"
@@ -74,16 +74,13 @@ fi
 if [[ $INSTALLED == "1" ]]; then
 	read -p "Press ENTER to continue to install via telnet to $droneip." t
 	echo "Installing Zeppelin on drone..."
-	if [[ $depmethod == "2" ]]; then
-		{ echo "cd ${DRONE_FTP_ROOT}/usb && cp -a zeppelin .. && exit"; sleep 1; } | telnet 192.168.1.1
-	fi
-	{ echo "cd ${DRONE_FTP_ROOT}/ && cp -a zeppelin / && rm -rf zeppelin && cp /etc/init.d/rcS /etc/init.d/rcS~ && echo '/zeppelin/bin/zeppelin' >> /etc/init.d/rcS && exit"; sleep 1; } | telnet $droneip
+	perl ./runcmd.pl $droneip "sh /data/video/zeppelin/scripts/recieve-update.sh || sh /data/video/usb/zeppelin/scripts/recieve-update.sh"
 	echo "Done."
 	echo
 	echo "To start zeppelin you need to reboot your device."
 	read -p "Would you like to do so now? [y/N]: " rebootdev
 	if [[ $rebootdev == "Y" || $rebootdev == "y" ]]; then
-		{ echo "reboot"; sleep 1; } | telnet $droneip
+		perl ./runcmd.pl $droneip "reboot"
 		echo "Device is rebooting."
 	fi
 	exit
