@@ -68,7 +68,7 @@ fi
 if [[ $INSTALLED == "1" ]]; then
 	read -p "Press ENTER to continue to install via telnet to $droneip." t
 	echo "Installing Zeppelin on drone..."
-	{ echo "cd ${DRONE_FTP_ROOT}/ && mv zeppelin / && rm -rf zeppelin && echo '/zeppelin/bin/zeppelin' >> /etc/init.d/rcS && exit"; sleep 1; } | telnet $droneip
+	{ echo "cd ${DRONE_FTP_ROOT}/ && mv zeppelin / && rm -rf zeppelin && cp /etc/init.d/rcS /etc/init.d/rcS~ && echo '/zeppelin/bin/zeppelin' >> /etc/init.d/rcS && exit"; sleep 1; } | telnet $droneip
 	echo "Done."
 	echo
 	echo "To start zeppelin you need to reboot your device."
