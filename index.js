@@ -9,6 +9,8 @@ var WebServer = require('./lib/webserver.js');
 
 function Zeppelin() {
 	this.expressapp;
+
+	this.cwd = __dirname;
 }
 
 Zeppelin.prototype = {

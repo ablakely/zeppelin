@@ -7,5 +7,10 @@
  * Written by Aaron Blakely <aaron@ephasic.org>
  */
 
+var zeppelinServer = require('../index.js');
 
+var zeppelin = new zeppelinServer();
 
+zeppelin.init(function() {
+	console.log("zeppelin started succuessfully!")
+});
