@@ -8,11 +8,12 @@
 var WebServer = require('./lib/webserver.js');
 
 function Zeppelin() {
-	this.expressapp = new WebServer();
+	this.expressapp;
 }
 
 Zeppelin.prototype = {
 	init: function(cb) {
+		this.expressapp = new WebServer(this);
 		this.expressapp.init(cb);
 	}
 };
