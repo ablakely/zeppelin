@@ -9,7 +9,12 @@
 
 var zeppelinServer = require('../index.js');
 
-var zeppelin = new zeppelinServer();
+var zeppelin = new zeppelinServer({
+	httpauth: {
+		username: "admin",
+		secret:   "password"
+	}
+});
 
 zeppelin.init(function() {
 	console.log("zeppelin started succuessfully!")

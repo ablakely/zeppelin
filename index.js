@@ -7,9 +7,9 @@
 
 var WebServer = require('./lib/webserver.js');
 
-function Zeppelin() {
+function Zeppelin(config) {
 	this.expressapp;
-
+	this.config = config;
 	this.cwd = __dirname;
 }
 
