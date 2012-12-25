@@ -1,0 +1,22 @@
+{
+	"author": "Aaron Blakely <aaron@ephasic.org> (http://twitter.com/Dark_Aaron)",
+	"name": "zeppelin",
+	"description": "Parrot AR Drone 2.0 quad-copter web app",
+	"version": "0.0.1",
+	"homepage": "https://github.com/ablakely/zeppelin",
+	"repository": {
+		"type": "git",
+		"url":  "git://github.com/ablakely/zeppelin.git"
+	},
+	"main": "./index",
+	"bin": {
+		"zeppelin": "./bin/zeppelin"
+	},
+	"dependencies": {
+		"express": "3.0.4",
+		"ar-drone": "*"
+	},
+	"engines": {
+		"node": "*"
+	}
+}
