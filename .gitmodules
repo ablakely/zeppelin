@@ -1,0 +1,3 @@
+[submodule "support/joinopenwifi"]
+	path = support/joinopenwifi
+	url = https://github.com/maxogden/joinopenwifi
