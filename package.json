@@ -15,7 +15,7 @@
 	"dependencies": {
 		"express": "3.0.4",
 		"ejs": "*",
-		"ar-drone": "*"
+		"ar-drone": "git://github.com/ablakely/node-ar-drone.git"
 	},
 	"engines": {
 		"node": "*"
