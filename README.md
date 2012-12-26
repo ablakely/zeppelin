@@ -1,5 +1,7 @@
 # zeppelin
 
+[![Build Status](https://secure.travis-ci.org/ablakely/zeppelin.png)](http://travis-ci.org/ablakely/zeppelin)
+
 zeppelin is a project to write a web interface for the [Parrot AR.Drone 2.0](http://ardrone2.parrot.com).  It's built ontop of [express](http://github.com/visionmedia/express) and [node-ar-drone](https://raw.github.com/felixge/node-ar-drone).
 
 ## Screenshots
