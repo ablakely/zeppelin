@@ -48,7 +48,7 @@
 
 		
 			<div class="span9">
-				<h4>Flight View</h4>
+				
 				<div id="flightView">
 					<div class="tabbable tabs-left">
 						<ul class="nav nav-tabs">
@@ -59,11 +59,11 @@
 						<div class="tab-content">
 							<div class="tab-pane active" id="frontCamera">
 								<img src="http://placehold.it/1280x720" />
-								<a href="#" ><i class="icon-camera-retro"></i> Capture Image</a>
+								<a href="#" class="pull-right"><i class="icon-camera-retro"></i> Capture Image</a>
 							</div>
 							<div class="tab-pane" id="groundCamera">
 								<img src="http://placehold.it/1280x720" />
-								<a href="#" ><i class="icon-camera-retro"></i> Capture Image</a>
+								<a href="#" class="pull-right"><i class="icon-camera-retro"></i> Capture Image</a>
 							</div>
 							<div class="tab-pane" id="gpsView">
 								<iframe height="450" class="span7" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=663+Totty+Cove,+Collierville,+TN&amp;aq=0&amp;oq=663+totty+cove&amp;sll=38.804821,-77.236966&amp;sspn=2.251598,4.927368&amp;t=h&amp;ie=UTF8&amp;hq=&amp;hnear=663+Totty+Cove,+Collierville,+Shelby,+Tennessee+38017&amp;ll=35.086239,-89.684201&amp;spn=0.009236,0.019248&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br />
@@ -73,13 +73,34 @@
 				</div>
 			</div>
 			<div class="span3" id="controlBox">
-				<h4>Flight Control</h4>
-				<div>
-					<a class="btn btn-success btn-block">Take Off</a>
-					<a class="btn btn-warning btn-block">Land</a>
-					<a class="btn btn-danger btn-block">Emergency Stop</a>
-				</div>
-				<br />
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Pitch</th>
+							<td>0</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>Yaw</th>
+							<td>0</td>
+						</tr>
+						<tr>
+							<th>Roll</th>
+							<td>0</td>
+						</tr>
+						<tr>
+							<th>Altitude</th>
+							<td>0</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<th>Speed</th>
+							<td>0</td>
+						</tr>
+					</tfoot>
+				</table>
 				<p><i class="icon-bolt"></i> Battery <b class="pull-right">75%</b></p>
 				<div class="progress">
   					<div class="bar bar-danger" style="width: 33.3%;"></div>
@@ -87,6 +108,11 @@
   					<div class="bar bar-success" style="width: 11%;"></div>
 				</div>
 				<label class="checkbox" id="toggleAutopilot"><input type="checkbox" /> Autopilot Engage</label>
+				<div>
+					<a class="btn btn-success btn-block">Take Off</a>
+					<a class="btn btn-warning btn-block">Land</a>
+					<a class="btn btn-danger btn-block">Emergency Stop</a>
+				</div>
 				<br />
 				<div>
 					<p><i class="icon-plane"></i> Location Presets</p>
