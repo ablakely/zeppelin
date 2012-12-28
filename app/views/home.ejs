@@ -101,11 +101,11 @@
 						</tr>
 					</tfoot>
 				</table>
-				<p><i class="icon-bolt"></i> Battery <b class="pull-right">75%</b></p>
+				<p><i class="icon-bolt"></i> Battery <b class="pull-right"><%= stats.battery.percent %>%</b></p>
 				<div class="progress">
-  					<div class="bar bar-danger" style="width: 33.3%;"></div>
-  					<div class="bar bar-warning" style="width: 33.3%;"></div>
-  					<div class="bar bar-success" style="width: 11%;"></div>
+  					<div class="bar bar-danger" style="width: <%= stats.battery.red %>%;"></div>
+  					<div class="bar bar-warning" style="width: <%= stats.battery.yellow %>%;"></div>
+  					<div class="bar bar-success" style="width: <%= stats.battery.green %>%;"></div>
 				</div>
 				<label class="checkbox" id="toggleAutopilot"><input type="checkbox" /> Autopilot Engage</label>
 				<div>
