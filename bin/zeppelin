@@ -14,6 +14,20 @@ var zeppelin = new zeppelinServer({
 	httpauth: {
 		username: "admin",
 		password: "secret"
+	},
+
+	// networking: Either use the drone as an AP or a client
+	network: {
+		mode: "AP",
+		APName: "zeppelin"
+
+		//mode: "CLIENT",
+		//clientOpts: {
+		//	ssid: "testap",
+		//	ip: "10.0.0.5",
+		//	netmask: "255.255.255.0",
+		//	router: "10.0.0.1"
+		//}
 	}
 });
 
