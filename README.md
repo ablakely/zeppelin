@@ -38,11 +38,11 @@ All of zeppelin's code is licensed under GPLv3.0.  See the LICENSE file for more
 
 ## Community
 ### IRC
-Our main IRC channel is (#zeppelin)[irc://irc.alphachat.net/zeppelin] on (Alphachat)[http://alphachat.net]. 
+Our main IRC channel is [#zeppelin](irc://irc.alphachat.net/zeppelin) on [Alphachat](http://alphachat.net). 
 
 # Credits
 This is a list of people who have contributed to the zeppelin project.
 
 | Nick                                        | Real Name     | Email                                         |
 |:--------------------------------------------|:--------------|:----------------------------------------------|
-| (Dark_Aaron)[http://twitter.com/Dark_Aaron] | Aaron Blakely | (aaron@ephasic.org)[mailto:aaron@ephasic.org]
+| [Dark_Aaron](http://twitter.com/Dark_Aaron) | Aaron Blakely | [aaron@ephasic.org](mailto:aaron@ephasic.org)
