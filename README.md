@@ -1,8 +1,11 @@
 # zeppelin
+![Zeppelin Logo](https://raw.github.com/ablakely/zeppelin/master/app/public/imgs/logo.jpg)
 
 [![Build Status](https://secure.travis-ci.org/ablakely/zeppelin.png)](http://travis-ci.org/ablakely/zeppelin)
 
 zeppelin is a project to write a web interface for the [Parrot AR.Drone 2.0](http://ardrone2.parrot.com).  It's built ontop of [express](http://github.com/visionmedia/express) and [node-ar-drone](https://raw.github.com/ablakely/node-ar-drone).
+
+![Parrot AR Drone](http://www.sussex-model-centre.co.uk/uploads/AR-Drone-2.0-b.jpg)
 
 ## Screenshots
 ![Home](http://bb.ohsk.net/uploads/Screen%20Shot%202012-12-27%20at%207.06.47%20PM.png)
@@ -38,7 +41,7 @@ All of zeppelin's code is licensed under GPLv3.0.  See the LICENSE file for more
 
 ## Community
 ### IRC
-Our main IRC channel is [#zeppelin](irc://irc.alphachat.net/zeppelin) on [Alphachat](http://alphachat.net). 
+Our main IRC channel is #zeppelin on [Alphachat](http://alphachat.net). 
 
 # Credits
 This is a list of people who have contributed to the zeppelin project.
